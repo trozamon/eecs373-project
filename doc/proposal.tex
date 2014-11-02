@@ -30,7 +30,7 @@ accurately and efficiently transmit data about the soil environment. At
 minimum, the soil data will include temperature and moisture content data. In
 addition to a sensor system, an accompanying base station will retrieve the
 data and display it in a human-understandable format as well as transferring it
-to the cloud to be stored permanently and analyzed further. This base station
+to the cloud to be stored permanently and analysed further. This base station
 will have LED indicators indicating the current moisture content of the soil,
 as well as potentiometers to set the allowable bounds for acceptable moisture
 content.
@@ -71,13 +71,19 @@ content.
 \subsection{Input Devices}
 \begin{itemize}
     \item ADC
-    \item Temperature Sensor
+    \item Temperature sensor
+	\item BLE receiver
+	\item Potentiometer
 \end{itemize}
 
 \subsection{Output Devices}
 \begin{itemize}
+	\item DAC
     \item BLE transmitter
-    \item LED data display
+	\item Ethernet
+	\item Status LEDs (Sensor)
+	\item Status LEDs (Receiver)
+	\item LCD display
 \end{itemize}
 
 \subsection{Complexities}
@@ -105,18 +111,20 @@ content.
             \item Device Driver with BLE receiver
             \item Interrupts
             \item General Purpose Timers
-            \item Analog to Digital (ADC)
+            \item Analog to Digital (ADC) and Digital to Analog (DAC)
         \end{itemize}
 \end{itemize}
 
 \subsection{Difficulty Components}
 \begin{itemize}
     \item Custom PCB
-    \item Custom moisture sensor
+    \item Custom moisture sensor (ADC/DAC)
     \item BLE radio transmitter/receiver
     \item Temperature sensor
-    \item Data display
     \item Solar cell
+	\item Ethernet controller
+	\item Potentiometer-based calibration
+	\item LCD display
 \end{itemize}
 
 \section{Functional Block Diagram}
@@ -156,7 +164,7 @@ content.
                 \url{https://www.sparkfun.com/products/8269}
             \item Potentiometers: \url{https://www.sparkfun.com/products/9939}
             \item
-                Ethernet Controller module: \url{https://www.sparkfun.com/products/765}
+                Ethernet controller module: \url{https://www.sparkfun.com/products/765}
                 or just the controller chip: \url{http://www.digikey.com/short/787n73}
                 \url{http://dlnmh9ip6v2uc.cloudfront.net/datasheets/BreakoutBoards/39662b.pdf}
         \end{itemize}
