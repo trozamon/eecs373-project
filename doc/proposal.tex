@@ -14,26 +14,23 @@
 \end{flushright}
 
 \begin{center}
-    {\Huge
-        EECS 373 Project Proposal: SCARH
+    {\LARGE
+        \textbf{EECS 373 Project Proposal: Green$^2$ Thumb}
     }
 \end{center}
 
 \section{High Level Description}
-Our project is a soil monitoring system optimized for both size and power
-consumption.  This is a project idea suggested by Professor Dutta as a research
-project. The system will consist of an optimized sensor package and a base
-station. The sensor package will take periodic measurements of the soil
-moisture and temperature; this data will then be transmitted to a base station
-for analysis and human interaction. The goal of the sensor system will be to
-accurately and efficiently transmit data about the soil environment. At
-minimum, the soil data will include temperature and moisture content data. In
-addition to a sensor system, an accompanying base station will retrieve the
-data and display it in a human-understandable format as well as transferring it
-to the cloud to be stored permanently and analysed further. This base station
-will have LED indicators indicating the current moisture content of the soil,
-as well as potentiometers to set the allowable bounds for acceptable moisture
-content.
+Our project is a soil monitoring system optimized for both size and power The
+sensor package will take periodic measurements of the soil moisture and
+temperature; this data will then be transmitted to a base station for analysis
+and human interaction. The goal of the sensor system will be to accurately and
+efficiently transmit data about the soil environment. At minimum, the soil data
+will include temperature and moisture content data. In addition to a sensor
+system, an accompanying base station will retrieve the data and display it in a
+human-understandable format as well as transferring it to the cloud to be
+stored permanently and analyzed further. This base station will have LED
+indicators indicating the current moisture content of the soil, as well as
+potentiometers to set the allowable bounds for acceptable moisture content.
 
 \section{Project Functionality}
 
@@ -112,6 +109,7 @@ content.
             \item Interrupts
             \item General Purpose Timers
             \item Analog to Digital (ADC) and Digital to Analog (DAC)
+                conversion
         \end{itemize}
 \end{itemize}
 
@@ -128,44 +126,47 @@ content.
 \end{itemize}
 
 \section{Functional Block Diagram}
-\includegraphics[width=0.9\textwidth]{functional_diagram.png}
+\begin{center}
+    \includegraphics[height=0.9\textheight]{functional_diagram.png}
+\end{center}
 
 \section{Component Level Diagram}
-\includegraphics[width=0.9\textwidth]{component_diagram.png}
+\begin{center}
+    \includegraphics[height=0.9\textheight]{component_diagram.png}
+\end{center}
 
 \section{Preliminary Component List}
 \begin{itemize}
     \item Sensor Package
         \begin{itemize}
-            \item Microcontroller: TI MSP430L09x
-                \url{http://www.ti.com/lsds/ti/microcontrollers_16­bit_32­bit/msp/ultra­low_powe
-                r/msp430l09x_low_voltage/overview.page}
-            \item BLE radio: Nordic nRF8001
-                \url{http://www.nordicsemi.com/eng/Products/Bluetooth­R­low­energy/nRF8001}
-            \item Tempurature Sensor: TI TMP102 http://www.ti.com/product/tmp102
-            \item Solar Cell: ~20x BPW34 https://www.sparkfun.com/products/9541
-            \item Soil Probe: Custom built and designed PCB
-            \item LEDs ­ Amber and Green variants, low current draw:
+            \item Microcontroller: TI MSP430L09x
+                \url{http://www.ti.com/lsds/ti/microcontrollers_16-bit_32-bit/msp/ultra-low_power/msp430l09x_low_voltage/overview.page}
+            \item BLE radio: Nordic nRF8001
+                \url{http://www.nordicsemi.com/eng/Products/Bluetooth-R-low-energy/nRF8001}
+            \item Tempurature Sensor: TI TMP102
+                \url{http://www.ti.com/product/tmp102}
+            \item Solar Cell: $\approx$20x BPW34
+                \url{https://www.sparkfun.com/products/9541}
+            \item Soil Probe: Custom built and designed PCB
+            \item LEDs - Amber and Green variants, low current draw:
                 \url{http://www.digikey.com/short/787w0q}
         \end{itemize}
     \item Base Station: 
         \begin{itemize}
-            \item BLE Radio receiver provided by Prof. Dutta
-            \item Tiva C Series microcontroller:
+            \item BLE Radio receiver provided by Prof. Dutta
+            \item Tiva C Series microcontroller:
                 \url{http://www.ti.com/lit/ds/symlink/tm4c1294ncpdt.pdf}
-                FPU allows for easy floating point computation
+            \item LCD Display: \url{https://www.sparkfun.com/products/10168}
             \item
-                (Alternatively) Laptop computer/Raspberry Pi for data analysis
-            \item LCD Display: \url{https://www.sparkfun.com/products/10168}
-            \item
-                LEDs ­ Red and Green variants:
+                LEDs - Red and Green variants:
                 \url{http://www.digikey.com/short/787wdd}
-            \item 5V wall power adapter:
+            \item 5V wall power adapter:
                 \url{https://www.sparkfun.com/products/8269}
             \item Potentiometers: \url{https://www.sparkfun.com/products/9939}
             \item
-                Ethernet controller module: \url{https://www.sparkfun.com/products/765}
-                or just the controller chip: \url{http://www.digikey.com/short/787n73}
+                Ethernet Controller module: \url{https://www.sparkfun.com/products/765}
+
+                Ethernet Controller chip: \url{http://www.digikey.com/short/787n73}
                 \url{http://dlnmh9ip6v2uc.cloudfront.net/datasheets/BreakoutBoards/39662b.pdf}
         \end{itemize}
 \end{itemize}
