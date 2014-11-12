@@ -17,7 +17,6 @@
 \maketitle
 
 \section{Power}
-% TODO Check the maths
 Power is provided by a bank of capacitors, charged by a solar cell. For the
 purposes of planning, the following characteristics are assumed:
 
@@ -25,10 +24,18 @@ purposes of planning, the following characteristics are assumed:
     \item 66mW Power Draw: Nordic MCU + BLE Combo (33mW) and miscellaneous
         other power draws
     \item 10uA solar cell current
-    \item 10ms runtime
+    \item 100ms runtime
 \end{itemize}
 
 \subsection{Maths}
+Assuming 66mWs, or $6.6\cdot10^{-3}$J, of energy are needed to take a
+measurement and send it, the amount of capacitance is given by: \begin{align*}
+    U & = \frac{1}{2}CV^2\\
+    1.32 \cdot 10^{-2} & = CV^2
+\end{align*}
+
+With 3V storage, this is roughly 1.4mF, and with a higher voltage like 6V,
+roughly 530uF.
 
 The charging time can be found by manipulating the standard capacitor equation
 thingy: \begin{align*}
@@ -37,24 +44,8 @@ thingy: \begin{align*}
     t & = \frac{Cv}{i}
 \end{align*}
 
-\subsubsection{Assuming 5V Storage}
-Need a continuous 66mW power while capacitors discharge from 5V to 3.3V.
-Relevant maths: \begin{align*}
-    p & = iv\\
-    v & = v_oe^{-t/RC}\\
-    i & = \frac{p}{v}
-\end{align*}
-
-The capacitor bank can decay from 5V to 3.3V in 0.1s, giving a time constant
-of: \begin{align*}
-    3.3 & = 5e^{-t/RC}\\
-    RC & = 0.24
-\end{align*}
-
-Our current is then: \begin{align*}
-    \frac{0.066}{5e^{-t/0.24}} = \frac{1}{3}e^{t/0.24}
-\end{align*} and the integral from 0 to 0.1 gives us the charge: \begin{align*}
-    \frac{1}{3} \cdot 0.24 \cdot \left(e^{0.1/0.24} - e^{0}\right)
-\end{align*} which, when dividing by 5V, gives 8mF of capacitance needed.
+With 6V storage, initial charging time is roughly 315 seconds. Secondary
+charging time is roughly half that. With 3V storage, charge time is roughly 420
+seconds always, since always charging from 0V.
 
 \end{document}
