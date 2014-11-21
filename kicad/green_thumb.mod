@@ -1,0 +1,30 @@
+PCBNEW-LibModule-V1  Fri 21 Nov 2014 03:57:32 PM EST
+# encoding utf-8
+Units mm
+$INDEX
+SOD-128
+$EndINDEX
+$MODULE SOD-128
+Po 0 0 0 15 546FA67B 00000000 ~~
+Li SOD-128
+Sc 0
+AR 
+Op 0 0 0
+T0 0 -2.54 1 1 0 0.15 N V 21 N "SOD-128"
+T1 0 2.54 1 1 0 0.15 N V 21 N "VAL**"
+$PAD
+Sh "1" R 1.4 2.1 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2.2 0
+$EndPAD
+$PAD
+Sh "2" R 1.4 2.1 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2.2 0
+$EndPAD
+$EndMODULE SOD-128
+$EndLIBRARY
