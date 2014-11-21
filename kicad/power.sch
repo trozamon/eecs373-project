@@ -30,13 +30,14 @@ LIBS:atmel
 LIBS:contrib
 LIBS:valves
 LIBS:green_thumb_power
+LIBS:power-cache
 EELAYER 27 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title ""
-Date "16 nov 2014"
+Date "21 nov 2014"
 Rev ""
 Comp ""
 Comment1 ""
@@ -159,7 +160,7 @@ L R R3
 U 1 1 546854A6
 P 9150 4450
 F 0 "R3" V 9230 4450 40  0000 C CNN
-F 1 "43k" V 9157 4451 40  0000 C CNN
+F 1 "100k" V 9157 4451 40  0000 C CNN
 F 2 "~" V 9080 4450 30  0000 C CNN
 F 3 "~" H 9150 4450 30  0000 C CNN
 	1    9150 4450
@@ -170,7 +171,7 @@ L R R4
 U 1 1 546854B3
 P 9150 5150
 F 0 "R4" V 9230 5150 40  0000 C CNN
-F 1 "14k" V 9157 5151 40  0000 C CNN
+F 1 "82k" V 9157 5151 40  0000 C CNN
 F 2 "~" V 9080 5150 30  0000 C CNN
 F 3 "~" H 9150 5150 30  0000 C CNN
 	1    9150 5150
@@ -288,7 +289,7 @@ F 3 "" H 5850 3250 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4600 3150 4600 4750
+	4600 2700 4600 4750
 Connection ~ 4600 3700
 Connection ~ 4600 4050
 Connection ~ 4600 4400
@@ -378,9 +379,7 @@ Wire Wire Line
 Text Label 6750 3250 0    60   ~ 0
 PWR_OUT_EN
 Wire Wire Line
-	5300 3150 5300 2700
-Wire Wire Line
-	5300 2700 5850 2700
+	4600 2700 5850 2700
 Connection ~ 5300 3150
 Connection ~ 6250 3900
 Text Label 5800 3900 0    60   ~ 0
