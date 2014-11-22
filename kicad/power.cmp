@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-may-18)-stable date = Fri 21 Nov 2014 04:12:34 PM EST
+Cmp-Mod V01 Created by CvPcb (2013-may-18)-stable date = Fri 21 Nov 2014 11:52:57 PM EST
 
 BeginCmp
 TimeStamp = /54686346;
@@ -85,20 +85,6 @@ IdModule  = DIP-6__300;
 EndCmp
 
 BeginCmp
-TimeStamp = /546F72A4;
-Reference = Q1;
-ValeurCmp = MOSFET_P;
-IdModule  = SOT23;
-EndCmp
-
-BeginCmp
-TimeStamp = /546F72E5;
-Reference = Q2;
-ValeurCmp = MOSFET_N;
-IdModule  = SOT323;
-EndCmp
-
-BeginCmp
 TimeStamp = /546F76E1;
 Reference = R1;
 ValeurCmp = 60k;
@@ -115,14 +101,14 @@ EndCmp
 BeginCmp
 TimeStamp = /546F79EF;
 Reference = R3;
-ValeurCmp = 1.2k;
+ValeurCmp = 100k;
 IdModule  = c_0402;
 EndCmp
 
 BeginCmp
 TimeStamp = /546F79FE;
 Reference = R4;
-ValeurCmp = 750;
+ValeurCmp = 60k;
 IdModule  = c_0402;
 EndCmp
 
@@ -144,6 +130,13 @@ BeginCmp
 TimeStamp = /546854B3;
 Reference = R7;
 ValeurCmp = 64.2k;
+IdModule  = c_0402;
+EndCmp
+
+BeginCmp
+TimeStamp = /546FB9BA;
+Reference = R8;
+ValeurCmp = 4.7k;
 IdModule  = c_0402;
 EndCmp
 
@@ -173,6 +166,27 @@ TimeStamp = /546F6BB3;
 Reference = U4;
 ValeurCmp = AOZ1280;
 IdModule  = SOT23_6;
+EndCmp
+
+BeginCmp
+TimeStamp = /547010C2;
+Reference = U5;
+ValeurCmp = NMOS;
+IdModule  = SOT23;
+EndCmp
+
+BeginCmp
+TimeStamp = /54701A18;
+Reference = U6;
+ValeurCmp = PMOS;
+IdModule  = SOT23;
+EndCmp
+
+BeginCmp
+TimeStamp = /5470147A;
+Reference = U7;
+ValeurCmp = NMOS;
+IdModule  = SOT23;
 EndCmp
 
 EndListe
