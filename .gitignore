@@ -2,3 +2,5 @@
 *.pdf
 *.b#*
 *.s#*
+*.kicad_pcb-bak
+_autosave-.kicad_pcb

@@ -37,7 +37,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title ""
-Date "22 nov 2014"
+Date "23 nov 2014"
 Rev ""
 Comp ""
 Comment1 ""
@@ -229,9 +229,9 @@ Wire Wire Line
 	9450 4400 9450 4550
 Connection ~ 9450 4000
 Wire Wire Line
-	9900 4500 9900 4100
+	9900 3900 9900 4500
 Wire Wire Line
-	9450 4500 9900 4500
+	9900 4500 9450 4500
 Connection ~ 9450 4500
 $Comp
 L GND #PWR03
@@ -351,8 +351,6 @@ Connection ~ 9550 4000
 Wire Wire Line
 	7950 2850 7950 2550
 Connection ~ 7950 2550
-Wire Wire Line
-	10000 2450 10000 3900
 $Comp
 L GND #PWR05
 U 1 1 546F74D9
@@ -491,9 +489,6 @@ Connection ~ 9900 4200
 Wire Wire Line
 	10000 4300 9900 4300
 Connection ~ 9900 4300
-Wire Wire Line
-	10000 4400 9900 4400
-Connection ~ 9900 4400
 Text Label 7350 3350 0    60   ~ 0
 VREADY
 Text Label 5750 1200 0    60   ~ 0
@@ -633,8 +628,71 @@ Wire Wire Line
 Wire Wire Line
 	8450 2550 8450 2450
 Wire Wire Line
-	8850 2450 10000 2450
+	8850 2450 10500 2450
 Wire Wire Line
 	8650 2700 8650 2850
 Connection ~ 8650 2850
+$Comp
+L R R9
+U 1 1 547157A3
+P 7300 2350
+F 0 "R9" V 7380 2350 40  0000 C CNN
+F 1 "4.7k" V 7307 2351 40  0000 C CNN
+F 2 "~" V 7230 2350 30  0000 C CNN
+F 3 "~" H 7300 2350 30  0000 C CNN
+	1    7300 2350
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R10
+U 1 1 547157B2
+P 8800 3350
+F 0 "R10" V 8880 3350 40  0000 C CNN
+F 1 "4.7k" V 8807 3351 40  0000 C CNN
+F 2 "~" V 8730 3350 30  0000 C CNN
+F 3 "~" H 8800 3350 30  0000 C CNN
+	1    8800 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR011
+U 1 1 547157C1
+P 7300 2700
+F 0 "#PWR011" H 7300 2700 30  0001 C CNN
+F 1 "GND" H 7300 2630 30  0001 C CNN
+F 2 "" H 7300 2700 60  0000 C CNN
+F 3 "" H 7300 2700 60  0000 C CNN
+	1    7300 2700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7300 2100 7300 2000
+Connection ~ 7300 2000
+Wire Wire Line
+	7300 2600 7300 2700
+$Comp
+L GND #PWR012
+U 1 1 5471589E
+P 8800 3700
+F 0 "#PWR012" H 8800 3700 30  0001 C CNN
+F 1 "GND" H 8800 3630 30  0001 C CNN
+F 2 "" H 8800 3700 60  0000 C CNN
+F 3 "" H 8800 3700 60  0000 C CNN
+	1    8800 3700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8800 3100 8800 3040
+Connection ~ 8800 3040
+Wire Wire Line
+	8800 3600 8800 3700
+Wire Wire Line
+	10000 4400 10000 4550
+Wire Wire Line
+	10000 4550 10500 4550
+Wire Wire Line
+	10500 4550 10500 2450
+Wire Wire Line
+	10000 3900 9900 3900
+Connection ~ 9900 4100
 $EndSCHEMATC
