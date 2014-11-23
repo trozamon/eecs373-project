@@ -37,7 +37,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title ""
-Date "22 nov 2014"
+Date "23 nov 2014"
 Rev ""
 Comp ""
 Comment1 ""
@@ -637,4 +637,58 @@ Wire Wire Line
 Wire Wire Line
 	8650 2700 8650 2850
 Connection ~ 8650 2850
+$Comp
+L R R9
+U 1 1 547157A3
+P 7300 2350
+F 0 "R9" V 7380 2350 40  0000 C CNN
+F 1 "4.7k" V 7307 2351 40  0000 C CNN
+F 2 "~" V 7230 2350 30  0000 C CNN
+F 3 "~" H 7300 2350 30  0000 C CNN
+	1    7300 2350
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R10
+U 1 1 547157B2
+P 8800 3350
+F 0 "R10" V 8880 3350 40  0000 C CNN
+F 1 "4.7k" V 8807 3351 40  0000 C CNN
+F 2 "~" V 8730 3350 30  0000 C CNN
+F 3 "~" H 8800 3350 30  0000 C CNN
+	1    8800 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR011
+U 1 1 547157C1
+P 7300 2700
+F 0 "#PWR011" H 7300 2700 30  0001 C CNN
+F 1 "GND" H 7300 2630 30  0001 C CNN
+F 2 "" H 7300 2700 60  0000 C CNN
+F 3 "" H 7300 2700 60  0000 C CNN
+	1    7300 2700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7300 2100 7300 2000
+Connection ~ 7300 2000
+Wire Wire Line
+	7300 2600 7300 2700
+$Comp
+L GND #PWR012
+U 1 1 5471589E
+P 8800 3700
+F 0 "#PWR012" H 8800 3700 30  0001 C CNN
+F 1 "GND" H 8800 3630 30  0001 C CNN
+F 2 "" H 8800 3700 60  0000 C CNN
+F 3 "" H 8800 3700 60  0000 C CNN
+	1    8800 3700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8800 3100 8800 3040
+Connection ~ 8800 3040
+Wire Wire Line
+	8800 3600 8800 3700
 $EndSCHEMATC
