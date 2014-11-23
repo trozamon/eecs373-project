@@ -229,9 +229,9 @@ Wire Wire Line
 	9450 4400 9450 4550
 Connection ~ 9450 4000
 Wire Wire Line
-	9900 4500 9900 4100
+	9900 3900 9900 4500
 Wire Wire Line
-	9450 4500 9900 4500
+	9900 4500 9450 4500
 Connection ~ 9450 4500
 $Comp
 L GND #PWR03
@@ -351,8 +351,6 @@ Connection ~ 9550 4000
 Wire Wire Line
 	7950 2850 7950 2550
 Connection ~ 7950 2550
-Wire Wire Line
-	10000 2450 10000 3900
 $Comp
 L GND #PWR05
 U 1 1 546F74D9
@@ -491,9 +489,6 @@ Connection ~ 9900 4200
 Wire Wire Line
 	10000 4300 9900 4300
 Connection ~ 9900 4300
-Wire Wire Line
-	10000 4400 9900 4400
-Connection ~ 9900 4400
 Text Label 7350 3350 0    60   ~ 0
 VREADY
 Text Label 5750 1200 0    60   ~ 0
@@ -633,7 +628,7 @@ Wire Wire Line
 Wire Wire Line
 	8450 2550 8450 2450
 Wire Wire Line
-	8850 2450 10000 2450
+	8850 2450 10500 2450
 Wire Wire Line
 	8650 2700 8650 2850
 Connection ~ 8650 2850
@@ -691,4 +686,13 @@ Wire Wire Line
 Connection ~ 8800 3040
 Wire Wire Line
 	8800 3600 8800 3700
+Wire Wire Line
+	10000 4400 10000 4550
+Wire Wire Line
+	10000 4550 10500 4550
+Wire Wire Line
+	10500 4550 10500 2450
+Wire Wire Line
+	10000 3900 9900 3900
+Connection ~ 9900 4100
 $EndSCHEMATC
