@@ -6,16 +6,16 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.001" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
-<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
-<layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
-<layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
-<layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
-<layer number="20" name="Dimension" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="no" active="yes"/>
+<layer number="17" name="Pads" color="2" fill="1" visible="no" active="yes"/>
+<layer number="18" name="Vias" color="2" fill="1" visible="no" active="yes"/>
+<layer number="19" name="Unrouted" color="6" fill="1" visible="no" active="yes"/>
+<layer number="20" name="Dimension" color="15" fill="1" visible="no" active="yes"/>
 <layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="yes"/>
 <layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="yes"/>
 <layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="yes"/>
 <layer number="25" name="tNames" color="7" fill="1" visible="no" active="yes"/>
@@ -32,8 +32,8 @@
 <layer number="36" name="bGlue" color="7" fill="5" visible="no" active="yes"/>
 <layer number="37" name="tTest" color="7" fill="1" visible="no" active="yes"/>
 <layer number="38" name="bTest" color="7" fill="1" visible="no" active="yes"/>
-<layer number="39" name="tKeepout" color="4" fill="11" visible="yes" active="yes"/>
-<layer number="40" name="bKeepout" color="1" fill="11" visible="yes" active="yes"/>
+<layer number="39" name="tKeepout" color="4" fill="11" visible="no" active="yes"/>
+<layer number="40" name="bKeepout" color="1" fill="11" visible="no" active="yes"/>
 <layer number="41" name="tRestrict" color="4" fill="10" visible="no" active="yes"/>
 <layer number="42" name="bRestrict" color="1" fill="10" visible="no" active="yes"/>
 <layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="yes"/>
@@ -56,33 +56,24 @@
 </layers>
 <library>
 <packages>
-<package name="PROBE_LAYOUT_1">
+<package name="PROBE_LAYOUT_1_OUT-IN">
 <polygon width="0.127" layer="1">
 <vertex x="-7.62" y="6.35"/>
 <vertex x="-2.54" y="6.35"/>
 <vertex x="-2.54" y="-6.35"/>
 <vertex x="-7.62" y="-6.35"/>
 </polygon>
-<smd name="IN" x="-5.08" y="5.08" dx="6.4516" dy="3.2512" layer="1" rot="R90"/>
-<polygon width="0.127" layer="29">
-<vertex x="-7.62" y="-6.35"/>
-<vertex x="-2.54" y="-6.35"/>
-<vertex x="-2.54" y="6.35"/>
-<vertex x="-7.62" y="6.35"/>
-</polygon>
+<smd name="IN" x="5.08" y="5.08" dx="6.4516" dy="3.2512" layer="1" rot="R90"/>
 <polygon width="0.127" layer="1">
 <vertex x="2.54" y="6.35"/>
 <vertex x="7.62" y="6.35"/>
 <vertex x="7.62" y="-6.35"/>
 <vertex x="2.54" y="-6.35"/>
 </polygon>
-<smd name="OUT" x="5.08" y="5.08" dx="6.4516" dy="3.2512" layer="1" rot="R90"/>
-<polygon width="0.127" layer="29">
-<vertex x="2.54" y="-6.35"/>
-<vertex x="7.62" y="-6.35"/>
-<vertex x="7.62" y="6.35"/>
-<vertex x="2.54" y="6.35"/>
-</polygon>
+<smd name="OUT" x="-5.08" y="5.08" dx="6.4516" dy="3.2512" layer="1" rot="R90"/>
+<rectangle x1="-7.62" y1="-6.35" x2="-2.54" y2="6.35" layer="29"/>
+<rectangle x1="2.54" y1="-6.35" x2="7.62" y2="6.35" layer="29"/>
+<circle x="-2.8956" y="7.0358" radius="0.42044375" width="0.127" layer="21"/>
 </package>
 <package name="SOT353">
 <smd name="1" x="-0.95" y="0.65" dx="0.5" dy="0.4" layer="1" rot="R180"/>
@@ -96,6 +87,25 @@
 <wire x1="0.7" y1="1" x2="-0.7" y2="1" width="0.127" layer="21"/>
 <rectangle x1="-0.7" y1="-1" x2="0.7" y2="1" layer="39"/>
 <text x="-2.035" y="1.235" size="0.6096" layer="21" rot="R270">&gt;NAME</text>
+</package>
+<package name="PROBE_LAYOUT_1_IN-OUT">
+<polygon width="0.127" layer="1">
+<vertex x="2.54" y="6.35"/>
+<vertex x="7.62" y="6.35"/>
+<vertex x="7.62" y="-6.35"/>
+<vertex x="2.54" y="-6.35"/>
+</polygon>
+<smd name="IN" x="-5.08" y="5.08" dx="6.4516" dy="3.2512" layer="1" rot="R270"/>
+<polygon width="0.127" layer="1">
+<vertex x="-7.62" y="6.35"/>
+<vertex x="-2.54" y="6.35"/>
+<vertex x="-2.54" y="-6.35"/>
+<vertex x="-7.62" y="-6.35"/>
+</polygon>
+<smd name="OUT" x="5.08" y="5.08" dx="6.4516" dy="3.2512" layer="1" rot="R90"/>
+<rectangle x1="-7.62" y1="-7.62" x2="-2.54" y2="5.08" layer="29"/>
+<rectangle x1="2.54" y1="-7.62" x2="7.62" y2="5.08" layer="29"/>
+<circle x="2.921" y="7.0104" radius="0.345475" width="0.127" layer="21"/>
 </package>
 </packages>
 <symbols>
@@ -166,7 +176,16 @@
 <gate name="G$1" symbol="SOIL_PROBE" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="PROBE_LAYOUT_1">
+<device name="IN-OUT" package="PROBE_LAYOUT_1_IN-OUT">
+<connects>
+<connect gate="G$1" pin="IN" pad="IN"/>
+<connect gate="G$1" pin="OUT" pad="OUT"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="OUT-IN" package="PROBE_LAYOUT_1_OUT-IN">
 <connects>
 <connect gate="G$1" pin="IN" pad="IN"/>
 <connect gate="G$1" pin="OUT" pad="OUT"/>
