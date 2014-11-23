@@ -8687,6 +8687,15 @@ Matches 4UCONN part # 11026&lt;br&gt;
 <text x="-0.4" y="0.75" size="1.27" layer="51">-</text>
 <text x="1.7" y="0.95" size="0.8" layer="51">S</text>
 </package>
+<package name="SMA-EDGE">
+<description>&lt;b&gt;SMA Antenna Connector&lt;/b&gt;&lt;p&gt;
+This is a footprint for an edge mount RF antenna. Works pretty well with SMA type connectors but may also work with other edge mount RF connectors. Keep in mind, these edge mount connectors assume you are using a 0.062" PCB thickness.</description>
+<smd name="GND@0" x="0" y="0" dx="1.524" dy="4.064" layer="1" cream="no"/>
+<smd name="SIG" x="2.54" y="0" dx="1.524" dy="4.064" layer="1" cream="no"/>
+<smd name="GND@1" x="5.08" y="0" dx="1.524" dy="4.064" layer="1" cream="no"/>
+<smd name="GND@2" x="0" y="0" dx="1.524" dy="4.064" layer="16"/>
+<smd name="GND@3" x="5.08" y="0" dx="1.524" dy="4.064" layer="16"/>
+</package>
 </packages>
 <symbols>
 <symbol name="M06">
@@ -8722,6 +8731,16 @@ Matches 4UCONN part # 11026&lt;br&gt;
 <pin name="1" x="7.62" y="-2.54" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
 <pin name="2" x="7.62" y="0" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
 <pin name="3" x="7.62" y="2.54" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
+</symbol>
+<symbol name="SMA_EDGE">
+<wire x1="0" y1="-2.54" x2="0" y2="-12.7" width="0.254" layer="94"/>
+<circle x="0" y="0" radius="1.1359" width="0.254" layer="94"/>
+<circle x="0" y="0" radius="2.54" width="0.254" layer="94"/>
+<pin name="GND@0" x="-2.54" y="-5.08" visible="off" length="short"/>
+<pin name="SIGNAL" x="5.08" y="0" visible="off" length="middle" rot="R180"/>
+<pin name="GND@1" x="-2.54" y="-7.62" visible="off" length="short"/>
+<pin name="GND@2" x="-2.54" y="-10.16" visible="off" length="short"/>
+<pin name="GND@3" x="-2.54" y="-12.7" visible="off" length="short"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -9247,6 +9266,27 @@ Standard 3-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 </device>
 </devices>
 </deviceset>
+<deviceset name="SMA_EDGE" prefix="J$">
+<description>&lt;b&gt;SMA Antenna Connector&lt;/b&gt;
+End launch SMA connector. The paste layer has been removed so that the connector can be hand soldered onto the board after reflow.</description>
+<gates>
+<gate name="1" symbol="SMA_EDGE" x="-2.54" y="7.62"/>
+</gates>
+<devices>
+<device name="" package="SMA-EDGE">
+<connects>
+<connect gate="1" pin="GND@0" pad="GND@0"/>
+<connect gate="1" pin="GND@1" pad="GND@1"/>
+<connect gate="1" pin="GND@2" pad="GND@2"/>
+<connect gate="1" pin="GND@3" pad="GND@3"/>
+<connect gate="1" pin="SIGNAL" pad="SIG"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 <library name="con-leotronics">
@@ -9382,7 +9422,6 @@ Source: http://www.leotronics.co.uk/Conexcon/Data%20Sheets/sec.%20A/1364ing.pdf<
 <part name="LED1" library="MAAV_13v1" deviceset="JON_LIB_LED" device="CHIPLED_0603"/>
 <part name="R1" library="resistor" deviceset="R-US_" device="R0603" value="50"/>
 <part name="GND3" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
-<part name="R2" library="resistor" deviceset="R-US_" device="R0603" value="1k"/>
 <part name="U4" library="soil_monitor" deviceset="TEMP_SENSOR_LMT84" device=""/>
 <part name="C12" library="SparkFun-Capacitors" deviceset="CAP" device="0402-CAP" value=".01uF"/>
 <part name="GND9" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
@@ -9402,14 +9441,17 @@ Source: http://www.leotronics.co.uk/Conexcon/Data%20Sheets/sec.%20A/1364ing.pdf<
 <part name="SJ2" library="SparkFun-Passives" deviceset="SOLDERJUMPER_2WAY" device="T"/>
 <part name="X1" library="con-leotronics" deviceset="1365-10" device=""/>
 <part name="SJ3" library="SparkFun-Passives" deviceset="SOLDERJUMPER" device="NO"/>
+<part name="J$1" library="SparkFun-Connectors" deviceset="SMA_EDGE" device=""/>
+<part name="GND18" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
+<part name="R2" library="resistor" deviceset="R-US_" device="R0603" value="1k"/>
 </parts>
 <sheets>
 <sheet>
 <plain>
 <text x="-101.6" y="88.9" size="6.4516" layer="95">Soil Mite V1: Low Voltage Setup </text>
-<wire x1="22.86" y1="73.66" x2="22.86" y2="-12.7" width="0.1524" layer="95" style="shortdash"/>
-<wire x1="22.86" y1="-12.7" x2="106.68" y2="-12.7" width="0.1524" layer="95" style="shortdash"/>
-<wire x1="106.68" y1="-12.7" x2="106.68" y2="73.66" width="0.1524" layer="95" style="shortdash"/>
+<wire x1="22.86" y1="73.66" x2="22.86" y2="-30.48" width="0.1524" layer="95" style="shortdash"/>
+<wire x1="22.86" y1="-30.48" x2="106.68" y2="-30.48" width="0.1524" layer="95" style="shortdash"/>
+<wire x1="106.68" y1="-30.48" x2="106.68" y2="73.66" width="0.1524" layer="95" style="shortdash"/>
 <wire x1="106.68" y1="73.66" x2="22.86" y2="73.66" width="0.1524" layer="95" style="shortdash"/>
 <text x="30.48" y="68.58" size="1.9304" layer="95">Keep Following as Close as Possible to their Respective Pins</text>
 <wire x1="-167.64" y1="63.5" x2="-167.64" y2="30.48" width="0.1524" layer="97" style="shortdash"/>
@@ -9459,7 +9501,6 @@ Source: http://www.leotronics.co.uk/Conexcon/Data%20Sheets/sec.%20A/1364ing.pdf<
 <instance part="LED1" gate="G$1" x="91.44" y="-60.96"/>
 <instance part="R1" gate="G$1" x="91.44" y="-50.8" rot="R90"/>
 <instance part="GND3" gate="1" x="91.44" y="-71.12"/>
-<instance part="R2" gate="G$1" x="-144.78" y="-38.1" rot="R90"/>
 <instance part="U4" gate="G$1" x="7.62" y="-48.26"/>
 <instance part="C12" gate="G$1" x="22.86" y="-48.26"/>
 <instance part="GND9" gate="1" x="35.56" y="-40.64" rot="R90"/>
@@ -9490,6 +9531,9 @@ Source: http://www.leotronics.co.uk/Conexcon/Data%20Sheets/sec.%20A/1364ing.pdf<
 <instance part="SJ3" gate="1" x="-114.3" y="-63.5" smashed="yes">
 <attribute name="NAME" x="-116.84" y="-60.96" size="1.778" layer="95"/>
 </instance>
+<instance part="J$1" gate="1" x="81.28" y="-2.54"/>
+<instance part="GND18" gate="1" x="76.2" y="-20.32" rot="MR0"/>
+<instance part="R2" gate="G$1" x="-144.78" y="-38.1" rot="R90"/>
 </instances>
 <busses>
 </busses>
@@ -9611,6 +9655,24 @@ Source: http://www.leotronics.co.uk/Conexcon/Data%20Sheets/sec.%20A/1364ing.pdf<
 <pinref part="GND16" gate="1" pin="GND"/>
 <wire x1="-12.7" y1="-5.08" x2="-12.7" y2="-7.62" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="J$1" gate="1" pin="GND@0"/>
+<pinref part="GND18" gate="1" pin="GND"/>
+<wire x1="78.74" y1="-7.62" x2="76.2" y2="-7.62" width="0.1524" layer="91"/>
+<wire x1="76.2" y1="-7.62" x2="76.2" y2="-10.16" width="0.1524" layer="91"/>
+<pinref part="J$1" gate="1" pin="GND@1"/>
+<wire x1="76.2" y1="-10.16" x2="76.2" y2="-12.7" width="0.1524" layer="91"/>
+<wire x1="76.2" y1="-12.7" x2="76.2" y2="-15.24" width="0.1524" layer="91"/>
+<wire x1="76.2" y1="-15.24" x2="76.2" y2="-17.78" width="0.1524" layer="91"/>
+<wire x1="78.74" y1="-10.16" x2="76.2" y2="-10.16" width="0.1524" layer="91"/>
+<junction x="76.2" y="-10.16"/>
+<pinref part="J$1" gate="1" pin="GND@2"/>
+<wire x1="78.74" y1="-12.7" x2="76.2" y2="-12.7" width="0.1524" layer="91"/>
+<junction x="76.2" y="-12.7"/>
+<pinref part="J$1" gate="1" pin="GND@3"/>
+<wire x1="78.74" y1="-15.24" x2="76.2" y2="-15.24" width="0.1524" layer="91"/>
+<junction x="76.2" y="-15.24"/>
+</segment>
 </net>
 <net name="N$2" class="0">
 <segment>
@@ -9649,6 +9711,7 @@ Source: http://www.leotronics.co.uk/Conexcon/Data%20Sheets/sec.%20A/1364ing.pdf<
 <wire x1="96.52" y1="20.32" x2="96.52" y2="22.86" width="0.1524" layer="91"/>
 <wire x1="96.52" y1="22.86" x2="86.36" y2="22.86" width="0.1524" layer="91"/>
 <junction x="86.36" y="22.86"/>
+<pinref part="J$1" gate="1" pin="SIGNAL"/>
 </segment>
 </net>
 <net name="ANT2" class="0">
@@ -9705,9 +9768,9 @@ Source: http://www.leotronics.co.uk/Conexcon/Data%20Sheets/sec.%20A/1364ing.pdf<
 <label x="-33.02" y="73.66" size="1.27" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U$2" gate="G$1" pin="X2"/>
-<wire x1="40.64" y1="60.96" x2="40.64" y2="55.88" width="0.1524" layer="91"/>
-<label x="40.64" y="60.96" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="U$2" gate="G$1" pin="X1"/>
+<wire x1="35.56" y1="55.88" x2="35.56" y2="58.42" width="0.1524" layer="91"/>
+<label x="35.56" y="58.42" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="XC1" class="0">
@@ -9717,9 +9780,9 @@ Source: http://www.leotronics.co.uk/Conexcon/Data%20Sheets/sec.%20A/1364ing.pdf<
 <label x="-30.48" y="71.12" size="1.27" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U$2" gate="G$1" pin="X1"/>
-<wire x1="35.56" y1="55.88" x2="35.56" y2="58.42" width="0.1524" layer="91"/>
-<label x="35.56" y="58.42" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="U$2" gate="G$1" pin="X2"/>
+<wire x1="40.64" y1="60.96" x2="40.64" y2="55.88" width="0.1524" layer="91"/>
+<label x="40.64" y="60.96" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="DEC1" class="0">
