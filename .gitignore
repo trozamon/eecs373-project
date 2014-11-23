@@ -1,2 +1,4 @@
 *.swp
 *.pdf
+*.kicad_pcb-bak
+_autosave-.kicad_pcb
