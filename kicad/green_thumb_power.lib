@@ -1,4 +1,4 @@
-EESchema-LIBRARY Version 2.3  Date: Wed 03 Dec 2014 03:21:21 AM EST
+EESchema-LIBRARY Version 2.3  Date: Wed 03 Dec 2014 09:38:59 AM EST
 #encoding utf-8
 #
 # AOZ1280
@@ -90,8 +90,8 @@ P 2 0 1 0  0 160  0 130 N
 P 3 0 1 0  0 -50  0 0  -20 0 N
 P 3 0 1 0  0 100  0 50  -50 50 N
 P 5 0 1 0  -20 0  -20 20  -50 0  -20 -20  -20 0 N
-X S 1 0 -200 39 U 50 50 1 1 I
-X G 2 -250 0 39 R 50 50 1 1 I
+X G 1 -250 0 39 R 50 50 1 1 I
+X S 2 0 -200 39 U 50 50 1 1 I
 X D 3 0 200 39 D 50 50 1 1 I
 ENDDRAW
 ENDDEF
