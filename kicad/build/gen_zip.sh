@@ -8,5 +8,9 @@ mv power-Edge_Cuts.gbr power.gko
 mv power-F_Cu.gtl power.gtl
 mv power-F_SilkS.gto power.gto
 mv power.drl power.xln
+mv power-B_Mask.gbs power.gbs
+mv power-B_Paste.gbp power.gbp
+mv power-F_Mask.gts power.gts
+mv power-F_Paste.gtp power.gtp
 
-zip build.zip power.gbl power.gbo power.gko power.gtl power.gto power.xln
+zip build.zip power.*
