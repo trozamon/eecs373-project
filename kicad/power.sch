@@ -54,7 +54,7 @@ F 1 "100u" H 2150 3400 40  0000 L CNN
 F 2 "~" H 2200 3350 30  0000 C CNN
 F 3 "~" H 2100 3500 300 0000 C CNN
 	1    2100 3500
-	0    1    1    0   
+	0    -1   -1   0   
 $EndComp
 $Comp
 L CAPAPOL C3
@@ -65,7 +65,7 @@ F 1 "100u" H 2150 3750 40  0000 L CNN
 F 2 "~" H 2200 3700 30  0000 C CNN
 F 3 "~" H 2100 3850 300 0000 C CNN
 	1    2100 3850
-	0    1    1    0   
+	0    -1   -1   0   
 $EndComp
 $Comp
 L CAPAPOL C4
@@ -76,7 +76,7 @@ F 1 "100u" H 2150 4100 40  0000 L CNN
 F 2 "~" H 2200 4050 30  0000 C CNN
 F 3 "~" H 2100 4200 300 0000 C CNN
 	1    2100 4200
-	0    1    1    0   
+	0    -1   -1   0   
 $EndComp
 $Comp
 L CAPAPOL C5
@@ -87,18 +87,7 @@ F 1 "100u" H 2150 4450 40  0000 L CNN
 F 2 "~" H 2200 4400 30  0000 C CNN
 F 3 "~" H 2100 4550 300 0000 C CNN
 	1    2100 4550
-	0    1    1    0   
-$EndComp
-$Comp
-L CAPAPOL C1
-U 1 1 54684D5D
-P 2100 3150
-F 0 "C1" H 2150 3250 40  0000 L CNN
-F 1 "100u" H 2150 3050 40  0000 L CNN
-F 2 "~" H 2200 3000 30  0000 C CNN
-F 3 "~" H 2100 3150 300 0000 C CNN
-	1    2100 3150
-	0    1    1    0   
+	0    -1   -1   0   
 $EndComp
 $Comp
 L BATTERY BT1
@@ -120,7 +109,7 @@ F 1 "100u" H 2150 4800 40  0000 L CNN
 F 2 "~" H 2200 4750 30  0000 C CNN
 F 3 "~" H 2100 4900 300 0000 C CNN
 	1    2100 4900
-	0    1    1    0   
+	0    -1   -1   0   
 $EndComp
 $Comp
 L CAPAPOL C7
@@ -131,7 +120,7 @@ F 1 "100u" H 2150 5150 40  0000 L CNN
 F 2 "~" H 2200 5100 30  0000 C CNN
 F 3 "~" H 2100 5250 300 0000 C CNN
 	1    2100 5250
-	0    1    1    0   
+	0    -1   -1   0   
 $EndComp
 $Comp
 L CAPAPOL C8
@@ -142,7 +131,7 @@ F 1 "100u" H 2150 5500 40  0000 L CNN
 F 2 "~" H 2200 5450 30  0000 C CNN
 F 3 "~" H 2100 5600 300 0000 C CNN
 	1    2100 5600
-	0    1    1    0   
+	0    -1   -1   0   
 $EndComp
 Text Notes 600  2750 0    60   ~ 0
 Solar Cell\n
@@ -354,33 +343,15 @@ F 3 "" H 9600 3100 60  0000 C CNN
 	1    9600 3100
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	1900 2950 1900 5600
-Connection ~ 1900 3500
-Connection ~ 1900 3850
-Connection ~ 1900 4200
-Connection ~ 1900 3150
 Connection ~ 1900 2950
 Wire Wire Line
 	1000 2950 1000 3700
-Connection ~ 1900 4550
-Connection ~ 1900 4900
-Connection ~ 1900 5250
 Wire Wire Line
 	1000 2950 8750 2950
 Wire Wire Line
 	1000 4300 1000 5900
 Wire Wire Line
 	1000 5900 10800 5900
-Wire Wire Line
-	2300 5900 2300 3150
-Connection ~ 2300 5600
-Connection ~ 2300 5250
-Connection ~ 2300 4900
-Connection ~ 2300 4550
-Connection ~ 2300 4200
-Connection ~ 2300 3850
-Connection ~ 2300 3500
 Wire Notes Line
 	600  2800 600  6000
 Wire Notes Line
@@ -657,4 +628,33 @@ F 3 "" H 5850 6250 60  0000 C CNN
 	1    5850 6250
 	1    0    0    -1  
 $EndComp
+$Comp
+L CAPAPOL C1
+U 1 1 54684D5D
+P 2100 3150
+F 0 "C1" H 2150 3250 40  0000 L CNN
+F 1 "100u" H 2150 3050 40  0000 L CNN
+F 2 "~" H 2200 3000 30  0000 C CNN
+F 3 "~" H 2100 3150 300 0000 C CNN
+	1    2100 3150
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	1900 2950 1900 5600
+Connection ~ 1900 3150
+Connection ~ 1900 3500
+Connection ~ 1900 3850
+Connection ~ 1900 4200
+Connection ~ 1900 4550
+Connection ~ 1900 5250
+Connection ~ 1900 4900
+Connection ~ 2300 5250
+Connection ~ 2300 4550
+Connection ~ 2300 4900
+Wire Wire Line
+	2300 3150 2300 5900
+Connection ~ 2300 4200
+Connection ~ 2300 3850
+Connection ~ 2300 3500
+Connection ~ 2300 5600
 $EndSCHEMATC
