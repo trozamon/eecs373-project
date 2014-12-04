@@ -1,0 +1,1 @@
+Place main.c in the ble_app_beacon project in <Keil Install Directory>\ARM\Device\Nordic\nrf51822\Board\pca10001\s110\ble_app_beacon
