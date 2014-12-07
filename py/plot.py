@@ -21,10 +21,10 @@ while True:
                 humid = min(2000, float(line.split(',')[1]))
                 temp = int(line.split(',')[2])
 
-                # Values less than 400 mean a sensor that's not in soil, or in
+                # Values less than 300 mean a sensor that's not in soil, or in
                 # soil so dry it can not get a measurement
-                if humid >= 400.0:
-                    humid = humid - 400.0
+                if humid >= 300.0:
+                    humid = humid - 300.0
                     humid = humid / 1600.0
                     humid = 1 - humid
                     humid = humid * 100
@@ -50,7 +50,7 @@ while True:
             hold(True)
             start = stop
 
-        if humid >= 400:
+        if humid >= 300.0:
             title(' '.join(['Current Moisture Level:', str(humids[-1])]))
         else:
             title('Current Moisture Level: Not in soil')
