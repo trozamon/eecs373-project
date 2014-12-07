@@ -49,6 +49,8 @@
 
 #define ADC_SAMPLING_INTERVAL                APP_TIMER_TICKS(100, APP_TIMER_PRESCALER) /**< Sampling rate for the ADC */
 
+static int32_t sample_num = 0;
+
 static app_timer_id_t                        m_adc_sampling_timer_id;      /**< ADC timer */
 
 // Hijack the UUID to send data, along with the MAJOR and MINOR values.
@@ -137,6 +139,9 @@ static void gpio_init(void)
 
     // Init advertising LED
     nrf_gpio_cfg_output(ADVERTISING_LED_PIN_NO);
+	
+		// Enable temp sensor
+		nrf_gpio_pin_set(PIN_TEMP_ENABLE);
 }
 
 void timers_init(void)
@@ -289,7 +294,7 @@ static void advertising_start(void)
     err_code = sd_ble_gap_adv_start(&m_adv_params);
     APP_ERROR_CHECK(err_code);
 
-    nrf_gpio_pin_set(ADVERTISING_LED_PIN_NO);
+    //nrf_gpio_pin_set(ADVERTISING_LED_PIN_NO);
 }
 
 static void advertising_stop(void)
@@ -370,8 +375,8 @@ static void adc_sampling_timeout_handler(void)
 
 static void adc_init(void)
 {   
-		// Enable temp sensor
-		nrf_gpio_pin_set(PIN_TEMP_ENABLE);
+	
+		//nrf_delay_us(1000000);
 	
     /* Enable interrupt on ADC sample ready event*/     
     NRF_ADC->INTENSET = ADC_INTENSET_END_Msk;   
@@ -381,7 +386,7 @@ static void adc_init(void)
     NRF_ADC->CONFIG = (ADC_CONFIG_EXTREFSEL_None << ADC_CONFIG_EXTREFSEL_Pos) /* Bits 17..16 : ADC external reference pin selection. */
                                     | (ADC_CONFIG_PSEL_AnalogInput2 << ADC_CONFIG_PSEL_Pos)                 /*!< Use analog input 2 as analog input. */
                                     | (ADC_CONFIG_REFSEL_VBG << ADC_CONFIG_REFSEL_Pos)                          /*!< Use internal 1.2V bandgap voltage as reference for conversion. */
-                                    | (ADC_CONFIG_INPSEL_AnalogInputOneThirdPrescaling << ADC_CONFIG_INPSEL_Pos) /*!< Analog input specified by PSEL with no prescaling used as input for the conversion. */
+                                    | (ADC_CONFIG_INPSEL_AnalogInputNoPrescaling << ADC_CONFIG_INPSEL_Pos) /*!< Analog input specified by PSEL with no prescaling used as input for the conversion. */
                                     | (ADC_CONFIG_RES_8bit << ADC_CONFIG_RES_Pos);                                  /*!< 8bit ADC resolution. */ 
     
     /* Enable ADC*/
@@ -393,6 +398,12 @@ void ADC_IRQHandler(void)
 {
     /* Clear dataready event */
   NRF_ADC->EVENTS_END = 0;  
+	
+	if (!sample_num) {
+		NRF_ADC->TASKS_START = 1;
+		sample_num++;
+		return;
+	}
 
   /* Write ADC result to tempurature */
 	TEMPERATURE = NRF_ADC->RESULT;
@@ -413,11 +424,11 @@ void ADC_IRQHandler(void)
     advertising_start();
 
     // Only keep LED on for 200000 us
-    nrf_delay_us(200000);
-    nrf_gpio_pin_clear(ADVERTISING_LED_PIN_NO);
+    //nrf_delay_us(200000);
+    //nrf_gpio_pin_clear(ADVERTISING_LED_PIN_NO);
 		
-		nrf_delay_us(1000000);
-		NVIC_SystemReset();
+		//nrf_delay_us(1000000);
+		//NVIC_SystemReset();
 }  
 
 /**
@@ -434,10 +445,10 @@ int main(void)
 		uint32_t lastSample = 0;
 		uint32_t currSample = 0;
 		const uint32_t epsilon = 15;
-		do {
+		//do {
 				lastSample = currSample;
 				currSample = find_time_delay(NRF_TIMER0, 100);
-		} while (lastSample != currSample);
+		//} while (lastSample != currSample);
 		TIME_DELAY = currSample;
 
     // Init BLE
